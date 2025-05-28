@@ -14,7 +14,8 @@
 .wpcf7 form .wpcf7-response-output {
 	margin: 2em 0.5em 1em;
 	padding: 0.2em 1em;
-	border: 2px solid #00a0d2; /* Blue */
+	border: 2px solid #00a0d2;
+	/* Blue */
 }
 
 .wpcf7 form.init .wpcf7-response-output,
@@ -24,22 +25,26 @@
 }
 
 .wpcf7 form.sent .wpcf7-response-output {
-	border-color: #46b450; /* Green */
+	border-color: #46b450;
+	/* Green */
 }
 
 .wpcf7 form.failed .wpcf7-response-output,
 .wpcf7 form.aborted .wpcf7-response-output {
-	border-color: #dc3232; /* Red */
+	border-color: #dc3232;
+	/* Red */
 }
 
 .wpcf7 form.spam .wpcf7-response-output {
-	border-color: #f56e28; /* Orange */
+	border-color: #f56e28;
+	/* Orange */
 }
 
 .wpcf7 form.invalid .wpcf7-response-output,
 .wpcf7 form.unaccepted .wpcf7-response-output,
 .wpcf7 form.payment-required .wpcf7-response-output {
-	border-color: #ffb900; /* Yellow */
+	border-color: #ffb900;
+	/* Yellow */
 }
 
 .wpcf7-form-control-wrap {
@@ -47,7 +52,8 @@
 }
 
 .wpcf7-not-valid-tip {
-	color: #dc3232; /* Red */
+	color: #dc3232;
+	/* Red */
 	font-size: 1em;
 	font-weight: normal;
 	display: block;
@@ -77,7 +83,8 @@
 .wpcf7-spinner {
 	visibility: hidden;
 	display: inline-block;
-	background-color: #23282d; /* Dark Gray 800 */
+	background-color: #23282d;
+	/* Dark Gray 800 */
 	opacity: 0.75;
 	width: 24px;
 	height: 24px;
@@ -95,7 +102,8 @@ form.submitting .wpcf7-spinner {
 .wpcf7-spinner::before {
 	content: '';
 	position: absolute;
-	background-color: #fbfbfc; /* Light Gray 100 */
+	background-color: #fbfbfc;
+	/* Light Gray 100 */
 	top: 4px;
 	left: 4px;
 	width: 6px;
@@ -162,11 +170,79 @@ form.submitting .wpcf7-spinner {
 	direction: ltr;
 }
 
-.wpcf7-reflection > output {
+.wpcf7-reflection>output {
 	display: list-item;
 	list-style: none;
 }
 
-.wpcf7-reflection > output[hidden] {
+.wpcf7-reflection>output[hidden] {
 	display: none;
+}
+
+
+/* newly added css */
+
+.footerLinks .elementor-widget-heading .elementor-heading-title {
+	font-size: 16px;
+	color: #fff;
+}
+
+.elementor-2861 .elementor-element.elementor-element-1ff34938 {
+	padding: 35px 0px 15px 0px;
+}
+
+
+.signInButton {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin: auto;
+	position: fixed;
+	background-color: #000;
+	padding: 10px 40px !important;
+	z-index: 9999;
+}
+.loginButton a,.NewconnectionButton a{
+	background-color: #fe0000 !important;
+}
+.main-header .header-lower {
+	background: #fff;
+	position: fixed !important;
+	top: 58px !important;
+	width: 100%;
+	padding-block: 10px;
+
+}
+
+.main-header .header-lower a {
+	color: #000 !important;
+}
+
+.bannerBelowSection {
+	top: 50px;
+}
+
+
+.HomepageBannerSection section.tx-hero-slider.tx-hero-slider__styleOne.tx-hero-slider__styleTwo.pt-75.pb-75 {
+    padding-top: 250px;
+}
+.HomepageBannerSection section.tx-hero-slider.tx-hero-slider__styleOne.tx-hero-slider__styleTwo.pt-75.pb-75 {
+    background-image: url(https://xiaomiplanet.sk/wp-content/uploads/2022/02/redmi-ax5400-router-foto.jpg) !important;
+}
+
+@media screen and (max-width:575px) {
+	.signInButton {
+		padding: 6px 7px !important;
+	}
+	.HomepageBannerSection section.tx-hero-slider.tx-hero-slider__styleOne.tx-hero-slider__styleTwo.pt-75.pb-75 {
+    padding-top: 50px;
+}
+
+
+	/* section.elementor-section.elementor-top-section.elementor-element.elementor-element-2acf5f38.elementor-hidden-desktop.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default ,section.elementor-section.elementor-top-section.elementor-element.elementor-element-3a64c5a8.elementor-hidden-desktop.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default{
+		    margin-top: 50px !important;
+} */
+.mobileBannerSection{
+	 margin-top: 50px !important;
+}
 }
