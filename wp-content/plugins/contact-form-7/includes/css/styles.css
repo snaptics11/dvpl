@@ -202,9 +202,12 @@ form.submitting .wpcf7-spinner {
 	padding: 10px 40px !important;
 	z-index: 9999;
 }
-.loginButton a,.NewconnectionButton a{
+
+.loginButton a,
+.NewconnectionButton a {
 	background-color: #fe0000 !important;
 }
+
 .main-header .header-lower {
 	background: #fff;
 	position: fixed !important;
@@ -224,25 +227,33 @@ form.submitting .wpcf7-spinner {
 
 
 .HomepageBannerSection section.tx-hero-slider.tx-hero-slider__styleOne.tx-hero-slider__styleTwo.pt-75.pb-75 {
-    padding-top: 250px;
+	padding-top: 250px;
 }
+
 .HomepageBannerSection section.tx-hero-slider.tx-hero-slider__styleOne.tx-hero-slider__styleTwo.pt-75.pb-75 {
-    background-image: url(https://xiaomiplanet.sk/wp-content/uploads/2022/02/redmi-ax5400-router-foto.jpg) !important;
+	background-image: url(https://xiaomiplanet.sk/wp-content/uploads/2022/02/redmi-ax5400-router-foto.jpg) !important;
 }
 
 @media screen and (max-width:575px) {
 	.signInButton {
 		padding: 6px 7px !important;
 	}
-	.HomepageBannerSection section.tx-hero-slider.tx-hero-slider__styleOne.tx-hero-slider__styleTwo.pt-75.pb-75 {
-    padding-top: 50px;
-}
 
+	.HomepageBannerSection section.tx-hero-slider.tx-hero-slider__styleOne.tx-hero-slider__styleTwo.pt-75.pb-75 {
+		padding-top: 50px;
+	}
 
 	/* section.elementor-section.elementor-top-section.elementor-element.elementor-element-2acf5f38.elementor-hidden-desktop.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default ,section.elementor-section.elementor-top-section.elementor-element.elementor-element-3a64c5a8.elementor-hidden-desktop.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default{
 		    margin-top: 50px !important;
 } */
-.mobileBannerSection{
-	 margin-top: 50px !important;
+	.mobileBannerSection {
+		margin-top: 50px !important;
+	}
+
 }
+
+@media screen and (max-width:400px) {
+	.HomepageBannerSection a.tx-button.tx-button__styleTheme {
+		margin-top: 20px;
+	}
 }
