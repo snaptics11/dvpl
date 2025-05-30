@@ -250,6 +250,32 @@ form.submitting .wpcf7-spinner {
 		margin-top: 50px !important;
 	}
 
+	.HomepageBannerSection .tx-hero-slider__styleTwo .tx-heading {
+		font-size: 24px !important;
+	}
+
+	.HomepageBannerSection .tx-hero-slider__styleTwo .tx-sliderContent {
+		padding: 150px 16px !important;
+	}
+
+	.elementor-2841 .elementor-element.elementor-element-df304e9 {
+		padding: 0 0px 0 0px !important;
+	}
+
+	.HomepageBannerSection .tx-sliderContent.position-relative.tx-z1.pt-190.pl-100.pr-100.pb-5.fifthSlide {
+		padding: 10px 0 10px 10px !important;
+	}
+
+	.HomepageBannerSection h2.sec-title-five_heading {
+		font-size: 37px !important;
+	}
+
+	.HomepageBannerSection .elementor-widget-image img {
+
+		margin-bottom: 13px;
+	}
+
+
 }
 
 @media screen and (max-width:400px) {
