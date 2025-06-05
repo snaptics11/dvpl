@@ -3737,7 +3737,7 @@ span.password-input span {
 }
 .tx-hero-slider__styleTwo .tx-sliderContent {
   max-width: 100%;
-  border-radius: 40px;
+  /* border-radius: 40px; */
   padding-bottom: 215px;
 }
 @media (max-width: 991px) {
@@ -3754,7 +3754,7 @@ span.password-input span {
   height: 100%;
   background: var(--black);
   opacity: 0.4;
-  border-radius: 40px;
+  /* border-radius: 40px; */
 }
 .tx-hero-slider__styleTwo .tx-bottomWrapper {
   gap: 35px;
