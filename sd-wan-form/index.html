@@ -628,7 +628,7 @@
 			display: flex;
 			flex-direction: column;
 			/* Arrange elements in a column */
-			align-items: center;
+			align-items: flex-start;
 			/* Center align all elements horizontally */
 			position: relative;
 		}
@@ -1137,7 +1137,7 @@
 						<div class="elementor-element elementor-element-6a55c5b elementor-widget elementor-widget-elementskit-contact-form7"
 							data-id="6a55c5b" data-element_type="widget"
 							data-widget_type="elementskit-contact-form7.default">
-							<div class="elementor-widget-container">
+							<div class="elementor-widget-container px-md-5">
 								<div class="ekit-wid-con">
 									<div class="ekit-form">
 										<div class="wpcf7 no-js" id="wpcf7-f3873-p3878-o1" lang="en-US" dir="ltr"
@@ -1167,7 +1167,7 @@
 															aria-invalid="false" value="" type="text"
 															name="your-name"></span> </label>
 											
-												<br>
+											
 												<label> Your email
 													<span class="wpcf7-form-control-wrap" data-name="your-email"><input
 															size="40" maxlength="400"
@@ -1176,7 +1176,7 @@
 															aria-invalid="false" value="" type="email"
 															name="your-email"></span> </label>
 											
-												<br>
+											
 												<label> Phone Number
 													<span class="wpcf7-form-control-wrap" data-name="tel-496"><input
 															size="40" maxlength="400"
@@ -1184,7 +1184,15 @@
 															autocomplete="tel" aria-required="true" aria-invalid="false"
 															value="" type="tel" name="tel-496"></span>
 												</label>
-												<label for="message"> Message </label>
+												<label> Company Name
+													<span class="wpcf7-form-control-wrap" data-name="Company-Name"><input
+															size="40" maxlength="400"
+															class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+															autocomplete="name" aria-required="true"
+															aria-invalid="false" value="" type="text"
+															name="Company-Name"></span> </label>
+												</label>
+												<label for="message" > Enter location </label>
 												<span class="wpcf7-form-control-wrap" data-name="your-message">
 													<textarea name="your-message" cols="40" style="height: 90px;"
 														class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required"
