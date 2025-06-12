@@ -28895,7 +28895,7 @@ only screen and (min-width: 768px) and (max-width: 991px),
   }
 
   .tx-main-menu ul li:not(:last-child) {
-    margin-right: 14px !important;
+    margin-right: 10px !important;
   }
 
   .elementor-2724 .elementor-element.elementor-element-74ed68d,.elementor-2746 .elementor-element.elementor-element-22d8b9d4 {

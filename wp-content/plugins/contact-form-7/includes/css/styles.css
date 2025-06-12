@@ -237,10 +237,15 @@ form.submitting .wpcf7-spinner {
 	font-size: 58px !important;
 }
 
+.BannerHeading h2 {
+	font-size: 54px;
+}
+
 @media screen and (max-width:575px) {
-	.BannerHeading h2{
+	.BannerHeading h2 {
 		font-size: 20px;
 	}
+
 	.signInButton {
 		padding: 6px 7px !important;
 	}
@@ -288,4 +293,13 @@ form.submitting .wpcf7-spinner {
 	.HomepageBannerSection a.tx-button.tx-button__styleTheme {
 		margin-top: 20px;
 	}
+}
+
+@media screen and (min-width:575px) and (max-width:767px) {
+	.HomepageBannerSection section.tx-hero-slider.tx-hero-slider__styleOne.tx-hero-slider__styleTwo.pt-75.pb-75 {
+		padding-top: 0px;
+	}
+	.BannerHeading h2{
+	font-size:34px;
+}
 }

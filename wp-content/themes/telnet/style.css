@@ -37,3 +37,27 @@ a[href="https://www.s-sols.com/products/wordpress/accelerator?utm_source=usersit
     margin-top: -18px;
 }
   .grecaptcha-badge { visibility: visible !important; }
+
+
+  /* img.attachment-large.size-large.wp-image-2716 {
+    max-width: 130px;
+} */
+.elementor-hidden-mobile .elementor-widget-image img{
+    max-width: 140% !important;
+}
+section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default .elementor-widget-image img{
+    max-width: 140% !important;
+}
+@media screen and (min-width:575px) and (max-width:1200px){
+    .mobileBannerSection{
+        padding-top: 60px;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1300px){
+    .elementor-hidden-mobile .elementor-widget-image img{
+    max-width: 100% !important;
+}
+section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default .elementor-widget-image img{
+    max-width: 100% !important;
+}
+}
