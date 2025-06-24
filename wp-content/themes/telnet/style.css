@@ -21,7 +21,7 @@ Nicolas Gallagher and Jonatha alpha-page-contentn Neal https://necolas.github.io
 */
 a[href="https://www.s-sols.com/products/wordpress/accelerator?utm_source=usersite&utm_medium=banner&utm_campaign=free_lim_ver&utm_term=accel"],
 html body a[href="https://www.s-sols.com/products/wordpress/accelerator?utm_source=usersite&utm_medium=banner&utm_campaign=free_lim_ver&utm_term=accel"] span {
-font-size: 0px;
+    font-size: 0px;
 }
 
 a[href="https://www.s-sols.com/products/wordpress/accelerator?utm_source=usersite&utm_medium=banner&utm_campaign=free_lim_ver&utm_term=accel"] span {
@@ -29,6 +29,7 @@ a[href="https://www.s-sols.com/products/wordpress/accelerator?utm_source=usersit
     opacity: 0;
     visibility: hidden;
 }
+
 a[href="https://www.s-sols.com/products/wordpress/accelerator?utm_source=usersite&utm_medium=banner&utm_campaign=free_lim_ver&utm_term=accel"] img {
     width: 0;
 }
@@ -36,28 +37,59 @@ a[href="https://www.s-sols.com/products/wordpress/accelerator?utm_source=usersit
 a[href="https://www.s-sols.com/products/wordpress/accelerator?utm_source=usersite&utm_medium=banner&utm_campaign=free_lim_ver&utm_term=accel"] {
     margin-top: -18px;
 }
-  .grecaptcha-badge { visibility: visible !important; }
+
+.grecaptcha-badge {
+    visibility: visible !important;
+}
 
 
-  /* img.attachment-large.size-large.wp-image-2716 {
+/* img.attachment-large.size-large.wp-image-2716 {
     max-width: 130px;
 } */
-.elementor-hidden-mobile .elementor-widget-image img{
+.elementor-hidden-mobile .elementor-widget-image img {
     max-width: 140% !important;
 }
-section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default .elementor-widget-image img{
+
+section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default .elementor-widget-image img {
     max-width: 140% !important;
 }
-@media screen and (min-width:575px) and (max-width:1200px){
-    .mobileBannerSection{
+
+@media screen and (min-width:575px) and (max-width:1200px) {
+    .mobileBannerSection {
         padding-top: 60px;
     }
 }
-@media screen and (min-width:992px) and (max-width:1300px){
-    .elementor-hidden-mobile .elementor-widget-image img{
-    max-width: 100% !important;
+
+@media screen and (min-width:992px) and (max-width:1300px) {
+    .elementor-hidden-mobile .elementor-widget-image img {
+        max-width: 100% !important;
+    }
+
+    section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default .elementor-widget-image img {
+        max-width: 100% !important;
+    }
 }
-section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default .elementor-widget-image img{
-    max-width: 100% !important;
+
+.Qrparent {
+    position: relative;
 }
+
+.Qrcode img {
+    height: 100px;
+    width: 106px;
+    position: absolute;
+    top: -60px;
+    right: -115px;
+}
+@media screen and (max-width:575px){
+    .Qrcode img {
+        height: 70px;
+        width: 70px;
+           position: relative;
+            top:0px;
+    right: 0px;
+    }
+        .HomepageBannerSection h2.sec-title-five_heading {
+        font-size: 18px !important;
+    }
 }
