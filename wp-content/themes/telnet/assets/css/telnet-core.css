@@ -9196,7 +9196,8 @@ span.password-input span {
   color: var(--white);
   width: 30px;
   height: 30px;
-  right: 30px;
+  top:0px;
+  right: -3px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
