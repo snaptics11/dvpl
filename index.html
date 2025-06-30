@@ -929,6 +929,7 @@
 
 <body
   class="home wp-singular page-template page-template-elementor_canvas page page-id-2841 wp-embed-responsive wp-theme-telnet theme-telnet woocommerce-no-js no-sidebar elementor-default elementor-template-canvas elementor-kit-2646 elementor-page elementor-page-2841">
+  
   <div data-elementor-type="wp-page" data-elementor-id="2841" class="elementor elementor-2841">
     <section
       class="elementor-section  elementor-top-section elementor-element elementor-element-ae3abd2 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
@@ -957,12 +958,12 @@
                   </a>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- below header section -->
     <section
       class="bannerSection elementor-section elementor-top-section elementor-element elementor-element-ebdc190 elementor-section-full_width elementor-section-stretched elementor-hidden-tablet elementor-hidden-mobile elementor-section-height-default elementor-section-height-default"
       data-id="ebdc190" data-element_type="section"
@@ -1198,7 +1199,6 @@
                       <div class="menu-outer"></div>
                     </nav>
                   </div>
-                  <!-- End Mobile Menu -->
                 </header>
               </div>
             </div>
@@ -1207,13 +1207,14 @@
         </div>
       </div>
     </section>
+    
     <section
-      class="mobileBannerSection elementor-section elementor-top-section elementor-element elementor-element-654f03a elementor-hidden-desktop elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+      class="mobileBannerSection elementor-section elementor-top-section elementor-element elementor-element-654f03a elementor-hidden-desktop elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section-content-middle "
       data-id="654f03a" data-element_type="section">
       <div class="elementor-container elementor-column-gap-default">
-        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-25586a8"
+        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-25586a8 background-white"
           data-id="25586a8" data-element_type="column">
-          <div class="elementor-widget-wrap elementor-element-populated">
+          <div class="elementor-widget-wrap elementor-element-populated has-white-background-color">
             <div
               class="elementor-element elementor-element-2e34a26 elementor-widget-tablet__width-initial elementor-widget elementor-widget-image"
               data-id="2e34a26" data-element_type="widget" data-widget_type="image.default">
@@ -1230,7 +1231,7 @@
         </div>
         <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-e4daeda"
           data-id="e4daeda" data-element_type="column">
-          <div class="elementor-widget-wrap elementor-element-populated">
+          <div class="elementor-widget-wrap elementor-element-populated has-white-background-color">
             <div
               class="elementor-element elementor-element-ff4ea87 eael_simple_menu_hamburger_disable_selected_menu_no eael-simple-menu-hamburger-align-right eael-hamburger--tablet elementor-widget elementor-widget-eael-simple-menu"
               data-id="ff4ea87" data-element_type="widget" data-widget_type="eael-simple-menu.default">
@@ -1401,6 +1402,8 @@
         </div>
       </div>
     </section>
+    <!-- End Mobile Menu -->
+
     <section
       class="HomepageBannerSection elementor-section elementor-top-section elementor-element elementor-element-057a0e6 fix elementor-section-full_width elementor-section-height-default elementor-section-height-default"
       data-id="057a0e6" data-element_type="section"
@@ -1413,7 +1416,7 @@
               class="elementor-element elementor-element-b83bc07 elementor-widget elementor-widget-hero_slider elh-el hero_slider"
               data-id="b83bc07" data-element_type="widget" data-widget_type="hero_slider.default">
               <div class="elementor-widget-container">
-                <section class="tx-hero-slider tx-hero-slider__styleOne tx-hero-slider__styleTwo pt-75 pb-75">
+                <section class="tx-hero-slider tx-hero-slider__styleOne tx-hero-slider__styleTwo ">
                   <div class="swiper-container" data-txheroslider>
                     <div class="swiper-wrapper">
                       <div class="swiper-slide tx-slideItem">
@@ -1971,11 +1974,11 @@
                           world.
                         </p>
                       </div>
-                  
+
 
                       <div class="content-wrap">
                         <div class=" tna-services-1-price wow fadeInRight">
-                          <div  class="d-flex align-items-end">
+                          <div class="d-flex align-items-end">
                             <h3 class="tna-heading-1 price">
                               <span class="dollar-sing">&#8360;</span>1050
                               <span class="month">/3 Month</span>
@@ -4563,6 +4566,72 @@
       }
     }
   </style>
+  <style>
+  /* Force sticky top bar */
+  .elementor-element-ae3abd2 {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+  }
+
+  /* Force sticky navbar */
+  .elementor-element-ebdc190,
+  .tx-header {
+    position: fixed !important;
+    top: 60px !important; /* adjust if needed */
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 9998 !important;
+  }
+
+  /* Push content below fixed sections */
+  body {
+    padding-top: 140px !important;
+  }
+</style>
+<style>
+  /* Fix top bar (Sign In / New Connection) on all screens */
+  .elementor-element-ae3abd2 {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #000; /* Ensure it's visible */
+  }
+
+  /* Fix desktop nav section (logo + menu) */
+  .elementor-element-ebdc190 {
+    position: fixed !important;
+    top: 60px !important;
+    left: 0;
+    width: 100%;
+    z-index: 9998;
+    background: #fff; /* Optional: makes nav visible on scroll */
+  }
+
+  .tx-header {
+    position: static !important;
+  }
+
+  /* Fix mobile logo/menu section */
+  .mobileBannerSection {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+    background: #000 !important;
+  }
+
+  /* Push content down for both desktop and mobile */
+  body {
+    padding-top: 140px !important;
+  }
+</style>
+
 </body>
 
 </html>
