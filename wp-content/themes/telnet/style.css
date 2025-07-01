@@ -137,7 +137,7 @@ section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor
     .elementor-2860 .elementor-element.elementor-element-a68a5f7 {
         margin-top: 0px;
         margin-bottom: 0px;
-        padding: 200px 0px 25px 0px !important;
+        padding: 20px 0px 25px 0px !important;
     }
 
     section.mt-5.mentor-section.elementor-top-section.elementor-element.elementor-element-1371f415.elementor-section-full_width.elementor-hidden-tablet.elementor-hidden-mobile.elementor-section-height-default.elementor-section-height-default {
@@ -175,7 +175,19 @@ section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor
 
 }
 
+.elementor-element.elementor-element-b4b3793.elementor-widget.elementor-widget-section_heading.elh-el.section_heading {
+    padding-top: 175px;
+}
+
 @media screen and (max-width:1198px) {
+    .elementor-element.elementor-element-b4b3793.elementor-widget.elementor-widget-section_heading.elh-el.section_heading {
+        color: red;
+        padding-top: 25px;
+    }
+
+    .elementor-element.elementor-element-038a1ca {
+        margin-top: 150px;
+    }
 
     /* .elementor-section.elementor-section-boxed>.elementor-container {
         background: #fff;
