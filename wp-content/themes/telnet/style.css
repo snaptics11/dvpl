@@ -81,15 +81,161 @@ section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor
     top: -60px;
     right: -115px;
 }
-@media screen and (max-width:575px){
+
+@media screen and (max-width:575px) {
     .Qrcode img {
         height: 70px;
         width: 70px;
-           position: relative;
-            top:0px;
-    right: 0px;
+        position: relative;
+        top: 0px;
+        right: 0px;
     }
-        .HomepageBannerSection h2.sec-title-five_heading {
+
+    .HomepageBannerSection h2.sec-title-five_heading {
         font-size: 18px !important;
     }
+}
+
+
+
+@media screen and (min-width:300px) {
+    section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-element-6a6a886b.elementor-section-full_width.elementor-hidden-tablet.elementor-hidden-mobile.elementor-section-height-default.elementor-section-height-default {
+        position: fixed !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 9998 !important;
+        background: #fff !important;
+    }
+
+
+
+    section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-element-15221fa.elementor-section-full_width.elementor-hidden-tablet.elementor-hidden-mobile.elementor-section-height-default.elementor-section-height-default {
+        position: fixed !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 9998 !important;
+        background: #fff !important;
+    }
+
+
+    section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-element-ea87f7b.elementor-section-full_width.elementor-hidden-tablet.elementor-hidden-mobile.elementor-section-height-default.elementor-section-height-default {
+        position: fixed !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 9998 !important;
+        background: #fff !important;
+    }
+
+    section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-element-1371f415.elementor-section-full_width.elementor-hidden-tablet.elementor-hidden-mobile.elementor-section-height-default.elementor-section-height-default {
+        position: fixed !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 9998 !important;
+        background: #fff !important;
+    }
+
+    .elementor-2860 .elementor-element.elementor-element-a68a5f7 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 200px 0px 25px 0px !important;
+    }
+
+    section.mt-5.mentor-section.elementor-top-section.elementor-element.elementor-element-1371f415.elementor-section-full_width.elementor-hidden-tablet.elementor-hidden-mobile.elementor-section-height-default.elementor-section-height-default {
+
+        position: fixed !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 9998 !important;
+        background: #fff !important;
+    }
+
+    section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-element-49ff2cd9.elementor-section-full_width.elementor-hidden-tablet.elementor-hidden-mobile.elementor-section-height-default.elementor-section-height-default {
+        position: fixed !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 9998 !important;
+        background: #fff !important;
+    }
+
+
+    /* section.mt-md-5.elementor-section.elementor-top-section.elementor-element.elementor-element-23eb5932.elementor-section-full_width.elementor-hidden-tablet.elementor-hidden-mobile.elementor-section-height-default.elementor-section-height-default{
+        position: fixed !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 9998 !important;
+        background: #fff !important;
+    } */
+    section.mt-md-5.elementor-section.elementor-top-section.elementor-element.elementor-element-23eb5932.elementor-section-full_width.elementor-hidden-tablet.elementor-hidden-mobile.elementor-section-height-default.elementor-section-height-default {
+        position: fixed !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 9998 !important;
+        background: #fff !important;
+    }
+
+}
+
+@media screen and (max-width:1198px) {
+
+    /* .elementor-section.elementor-section-boxed>.elementor-container {
+        background: #fff;
+    } */
+    .mobileBannerSection {
+        background: #fff;
+    }
+
+    .elementor-element.elementor-element-f6913d8.elementor-widget.elementor-widget-section_heading.elh-el.section_heading {
+        padding-top: 150px;
+    }
+
+    .mobileBannerSection {
+        position: fixed !important;
+        width: 100% !important;
+        z-index: 9998 !important;
+
+    }
+
+    .elementor-element-a68a5f7 {
+        top: 125px;
+    }
+
+    .split-line {
+        color: red;
+    }
+
+    section.mt-5.elementor-section.elementor-top-section.elementor-element.elementor-element-79856bb3.elementor-hidden-desktop.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #fff !important;
+        z-index: 99;
+    }
+
+}
+
+@media screen and (min-width:1199px) {
+    .contactPage {
+        padding-top: 200px;
+    }
+
+    body.home.wp-singular.page-template.page-template-elementor_canvas.page.page-id-2841.wp-embed-responsive.wp-theme-telnet.theme-telnet.woocommerce-js.no-sidebar.elementor-default.elementor-template-canvas.elementor-kit-2646.elementor-page.elementor-page-2841.e--ua-blink.e--ua-chrome.e--ua-webkit {
+        padding-top: 0 !important;
+    }
+
+    section.elementor-section.elementor-top-section.elementor-element.elementor-element-26b86bb.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+        padding-top: 100px;
+    }
+
+    section.elementor-section.elementor-top-section.elementor-element.elementor-element-057a0e6.fix.elementor-section-full_width.elementor-section-height-default.elementor-section-height-default {
+        top: 100px;
+    }
+
+    section.mobileBannerSection.elementor-section.elementor-top-section.elementor-element.elementor-element-763780f.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default {
+        margin-top: 100px;
+    }
+
+    .tx-sliderContent.position-relative.tx-z1 {
+        margin-top: 80px;
+    }
+
 }
