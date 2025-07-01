@@ -859,18 +859,85 @@
                 font-size: 30px;
                 margin-bottom: 30px;
             }
+
             .location-btn {
                 margin: 10px;
                 font-size: 20px;
             }
+        }
 
+        /* ╔═══════════════════════════════════════════════════════════╗
+   ║          D V P L  –  D O U B L E  F I X E D  H E A D E R  ║
+   ╚═══════════════════════════════════════════════════════════╝ */
 
+        /* 0️⃣  tune these two numbers if your bars are taller / shorter */
+        :root {
+            --dvpl-topbar-h: 60px;
+            /* black bar height  */
+            --dvpl-nav-h: 60px;
+            /* white bar height  */
+        }
 
+        /* 1️⃣  BLACK TOP BAR  (Sign In / New connection) */
+        .elementor-element-ae3abd2 {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: #000;
+            /* keeps it solid black */
+            z-index: 10000;
+            margin: 0 !important;
+            border: none !important;
+        }
 
+        /* 2️⃣  WHITE NAV BAR — DESKTOP  */
+        .elementor-element-6a6a886b {
+            position: fixed !important;
+            top: var(--dvpl-topbar-h);
+            /* sits flush under black bar  */
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: #fff;
+            z-index: 9999;
+            margin: 0 !important;
+            /* kill Elementor’s mt‑5 */
+            border: none !important;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .05);
+        }
+
+        /* 3️⃣  WHITE NAV BAR — MOBILE (logo + hamburger) */
+        .mobileBannerSection {
+            position: fixed !important;
+            top: var(--dvpl-topbar-h);
+            /* same offset */
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: #fff;
+            z-index: 9999;
+            margin: 0 !important;
+            border: none !important;
+        }
+
+        /* 4️⃣  PUSH PAGE CONTENT BELOW BOTH FIXED BARS                */
+        /*     (black‑bar height + white‑bar height)                   */
+        body {
+            padding-top: calc(var(--dvpl-topbar-h) + var(--dvpl-nav-h)) !important;
+        }
+
+        /* 5️⃣  MAKE SURE DROPDOWNS / MOBILE MENU OVERLAY STAY ON TOP   */
+        .tx-main-menu,
+        .eael-simple-menu-container {
+            z-index: 10001;
         }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
 
 </head>
 
@@ -959,7 +1026,7 @@
                                             </li>
                                             <li id="menu-item-2906"
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2906 current-menu-item current_page_item">
-                                                <a href="./../broadband/index.html"  aria-current="page">Broadband</a>
+                                                <a href="./../broadband/index.html" aria-current="page">Broadband</a>
                                                 <ul class="sub-menu">
                                                     <li id="menu-item-2907"
                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2907">
@@ -1082,7 +1149,7 @@
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2925 menu-item-has-children">
                                                 <a href="./../sme-broadband/index.html">SME Broadband</a>
                                                 <ul class="sub-menu">
-                                                     <li
+                                                    <li
                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9999">
                                                         <a href="./../sme-broadband/index.html">Business Broadband</a>
                                                     </li>
@@ -1263,7 +1330,7 @@
                                         </li>
                                         <li
                                             class="menu-item menu-item-type-post_type menu-item-object-page  page_item page-item-2902  menu-item-2922">
-                                            <a href="./../gated-community/index.html" >Gated Community</a>
+                                            <a href="./../gated-community/index.html">Gated Community</a>
                                         </li>
                                         <li
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2927">
@@ -1291,16 +1358,16 @@
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2925">
                                             <a href="./../sme-broadband/index.html">SME Broadband</a>
                                             <ul class="sub-menu">
-                                                     <li
-                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9999">
-                                                        <a href="./../sme-broadband/index.html">Business Broadband</a>
-                                                    </li>
-                                                    <li
-                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9999">
-                                                        <a href="./../become-channel-partner/index.html">Become Channel
-                                                            Partner</a>
-                                                    </li>
-                                                </ul>
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9999">
+                                                    <a href="./../sme-broadband/index.html">Business Broadband</a>
+                                                </li>
+                                                <li
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9999">
+                                                    <a href="./../become-channel-partner/index.html">Become Channel
+                                                        Partner</a>
+                                                </li>
+                                            </ul>
                                         </li>
                                         <li
                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2921">
@@ -1422,7 +1489,7 @@
                 </div>
             </div>
         </section>
-      <div class="row">
+        <div class="row">
             <div class="col-xl-12">
                 <div class="tx-sliderContent position-relative tx-z1 p-md-5 p-3 pl-100 pr-100 pb-5 fifthSlide"
                     data-background="./../wp-content/uploads/2024/06/homeslider5.png">
@@ -1440,8 +1507,10 @@
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <div class="elementor-element elementor-element-c33cab5 elementor-widget__width-auto elementor-widget elementor-widget-heading"
                                         data-id="c33cab5" data-element_type="widget" data-widget_type="heading.default">
-                                        <div class="elementor-widget-container" >
-                                            <span style="background-color: #fff;padding: 15px;color: red;border-radius: 10px;"  class="elementor-heading-title elementor-size-default"><a
+                                        <div class="elementor-widget-container">
+                                            <span
+                                                style="background-color: #fff;padding: 15px;color: red;border-radius: 10px;"
+                                                class="elementor-heading-title elementor-size-default"><a
                                                     href="https://play.google.com/store/apps/details?id=com.cloudradius.dvpl"
                                                     target="_blank"> Download DVPL App</a></span>
                                         </div>
@@ -1452,7 +1521,8 @@
                                         data-widget_type="section_heading.default">
                                         <div class="elementor-widget-container">
                                             <div class="sec-title-five text-left">
-                                                <h2 class="sec-title-five_heading text-white">Manage Your Connection On the Go</h2>
+                                                <h2 class="sec-title-five_heading text-white">Manage Your Connection On
+                                                    the Go</h2>
                                                 <div class="sec-title-five_text">
                                                     Pay bills, raise tickets & track usage with the DVPL App.
                                                 </div>
@@ -1474,30 +1544,33 @@
 
                                     <div class="d-flex gap-2 mt-3">
                                         <div class="elementor-element elementor-element-530b6eb elementor-widget__width-auto elementor-widget elementor-widget-image"
-                                        data-id="530b6eb" data-element_type="widget" data-widget_type="image.default">
-                                        <div class="elementor-widget-container">
-                                            <a
-                                                href="https://play.google.com/store/apps/details?id=com.cloudradius.dvpl">
-                                                <img loading="lazy" decoding="async" width="152" height="45"
-                                                    src="./../wp-content/uploads/2024/06/play-store.png"
-                                                    class="attachment-large size-large wp-image-2741" alt="play store"
-                                                    srcset="
+                                            data-id="530b6eb" data-element_type="widget"
+                                            data-widget_type="image.default">
+                                            <div class="elementor-widget-container">
+                                                <a
+                                                    href="https://play.google.com/store/apps/details?id=com.cloudradius.dvpl">
+                                                    <img loading="lazy" decoding="async" width="152" height="45"
+                                                        src="./../wp-content/uploads/2024/06/play-store.png"
+                                                        class="attachment-large size-large wp-image-2741"
+                                                        alt="play store" srcset="
                                 ./../wp-content/uploads/2024/06/play-store.png        152w,
                                 ./../wp-content/uploads/2024/06/play-store-150x45.png 150w
                               " sizes="(max-width: 152px) 100vw, 152px" />
-                                            </a>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="elementor-element elementor-element-d1030e9 elementor-widget__width-auto elementor-widget elementor-widget-image"
-                                        data-id="d1030e9" data-element_type="widget" data-widget_type="image.default">
-                                        <div class="elementor-widget-container">
-                                            <a href="https://apps.apple.com/in/app/dvpl/id6526485512">
-                                                <img loading="lazy" decoding="async" width="135" height="45"
-                                                    src="./../wp-content/uploads/2024/06/app-store.png"
-                                                    class="attachment-large size-large wp-image-2745" alt="app store" />
-                                            </a>
+                                        <div class="elementor-element elementor-element-d1030e9 elementor-widget__width-auto elementor-widget elementor-widget-image"
+                                            data-id="d1030e9" data-element_type="widget"
+                                            data-widget_type="image.default">
+                                            <div class="elementor-widget-container">
+                                                <a href="https://apps.apple.com/in/app/dvpl/id6526485512">
+                                                    <img loading="lazy" decoding="async" width="135" height="45"
+                                                        src="./../wp-content/uploads/2024/06/app-store.png"
+                                                        class="attachment-large size-large wp-image-2745"
+                                                        alt="app store" />
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
