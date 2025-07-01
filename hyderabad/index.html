@@ -711,6 +711,106 @@
         .tna-pr-btn-2 {
             display: none;
         }
+/* ✅ Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== DESKTOP (≥ 992px) ========== */
+@media (min-width: 992px) {
+  /* 1. Black bar (Sign In / New Connection) */
+  .elementor-element-ae3abd2 {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    margin: 0;
+  }
+
+  /* 2. White bar (Logo + Nav) */
+  .elementor-element-1371f415 {
+    position: fixed !important;
+    top: 48px; /* height of black bar */
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 3. Hero Section (Broadband Plans + Hyderabad) */
+  .elementor-element-a68a5f7 {
+    position: fixed !important;
+    top: 140px; /* 48 (black) + ~92 (white) */
+    left: 0;
+    width: 100%;
+    z-index: 9998;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff;
+  }
+
+  /* Push page down so nothing hides */
+  body {
+    padding-top: 360px;
+  }
+}
+
+/* ========== MOBILE (≤ 991px) ========== */
+@media (max-width: 991px) {
+  /* 1. Black bar fixed */
+  .elementor-element-ae3abd2 {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    margin: 0;
+  }
+
+  /* 2. White bar (mobile logo + menu) — NO GAP */
+  .elementor-element-14bb6546 {
+    position: fixed !important;
+    top: 48px; /* immediately below black bar */
+    left: 0;
+    width: 100vw;
+    z-index: 9999;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff;
+  }
+
+  .elementor-element-14bb6546 > .elementor-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important; /* no side spacing */
+  }
+
+  /* 3. Hero section fixed right below white */
+  .elementor-element-a68a5f7 {
+    position: fixed !important;
+    top: 140px; /* 48 + ~92 */
+    left: 0;
+    width: 100%;
+    z-index: 9998;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff;
+  }
+
+  /* Push content below entire header stack */
+  body {
+    padding-top: 360px;
+  }
+}
+
+
+ 
+
+        
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 </head>
