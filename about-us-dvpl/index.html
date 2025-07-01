@@ -718,18 +718,54 @@
 		.tna-pr-btn-2 {
 			display: none;
 		}
-
-
-
-
-
-
-
-
-
 		.intro-section li {
 			margin-bottom: 10px;
 		}
+
+
+
+		/* ───────────────────────────────────────────────
+   1.  TOP BLACK BAR  (Sign In / New connection)
+   ───────────────────────────────────────────── */
+.elementor-element-ae3abd2{          /* header section ID  ae3abd2 */
+  position:fixed;
+  inset:0 0 auto 0;                 /* top:0; left/right:0 */
+  width:100%;
+  z-index:10000;                    /* sits above everything */
+}
+
+/* ───────────────────────────────────────────────
+   2.  MAIN NAV ‑ DESKTOP
+   ───────────────────────────────────────────── */
+.elementor-element-eeaa2cc{         /* nav section ID  eeaa2cc */
+  position:fixed;
+  top:60px;                         /* ≈ height of bar above – tweak if needed */
+  left:0;
+  width:100%;
+  z-index:9999;
+}
+
+/* ───────────────────────────────────────────────
+   3.  MAIN NAV ‑ TABLET & MOBILE (hamburger)
+   ───────────────────────────────────────────── */
+.mobileBannerSection{               /* mobile menu section */
+  position:fixed;
+  top:60px;                         /* identical offset */
+  left:0;
+  width:100%;
+  z-index:9999;
+}
+
+/* ───────────────────────────────────────────────
+   4.  PREVENT PAGE CONTENT FROM HIDING BEHIND THE
+       NOW‑FIXED HEADER COMBO
+   ───────────────────────────────────────────── */
+body{
+  margin-top:120px;                 /* 60 px bar + 60 px nav */
+}
+
+
+		
 	</style>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 </head>
@@ -772,8 +808,9 @@
 		</section>
 
 		<section
-			class="mt-5  elementor-section elementor-top-section elementor-element elementor-element-eeaa2cc elementor-section-full_width elementor-hidden-tablet elementor-hidden-mobile elementor-section-height-default elementor-section-height-default"
+			class="elementor-section elementor-top-section elementor-element elementor-element-eeaa2cc elementor-section-full_width elementor-hidden-tablet elementor-hidden-mobile elementor-section-height-default elementor-section-height-default"
 			data-id="eeaa2cc" data-element_type="section">
+
 			<div class="elementor-container elementor-column-gap-default">
 				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-74ed68d"
 					data-id="74ed68d" data-element_type="column">
@@ -975,12 +1012,12 @@
 		</section>
 
 		<section
-			class="mobileBannerSection elementor-section elementor-top-section elementor-element elementor-element-727d5e81 elementor-hidden-desktop elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+			class="mobileBannerSection elementor-section elementor-top-section elementor-element elementor-element-727d5e81 elementor-hidden-desktop elementor-section-boxed elementor-section-height-default elementor-section-height-default has-white-background-color"
 			data-id="727d5e81" data-element_type="section">
 			<div class="elementor-container elementor-column-gap-default">
 				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4e633226"
 					data-id="4e633226" data-element_type="column">
-					<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-widget-wrap elementor-element-populated has-white-background-color">
 						<div class="elementor-element elementor-element-4baac46c elementor-widget-tablet__width-initial elementor-widget elementor-widget-image"
 							data-id="4baac46c" data-element_type="widget" data-widget_type="image.default">
 							<div class="elementor-widget-container">
@@ -995,10 +1032,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-698d1fb4"
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-698d1fb4 has-white-background-color"
 					data-id="698d1fb4" data-element_type="column">
 					<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-26e924a3 eael_simple_menu_hamburger_disable_selected_menu_no eael-simple-menu-hamburger-align-right eael-hamburger--tablet elementor-widget elementor-widget-eael-simple-menu"
+						<div class="elementor-element elementor-element-26e924a3 eael_simple_menu_hamburger_disable_selected_menu_no eael-simple-menu-hamburger-align-right eael-hamburger--tablet elementor-widget elementor-widget-eael-simple-menu "
 							data-id="26e924a3" data-element_type="widget" data-widget_type="eael-simple-menu.default">
 							<div class="elementor-widget-container">
 								<style>
@@ -2694,6 +2731,36 @@
 			.floating_btn {
 				right: 20px;
 			}
+		}
+	</style>
+	<style>
+		/* Fix the top black bar (Sign In / New Connection) */
+		.elementor-element-ae3abd2 {
+			position: fixed !important;
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			z-index: 9999 !important;
+			background: #000 !important;
+		}
+
+		/* Fix the main header/nav (logo + menu) */
+		.elementor-element-eeaa2cc {
+			position: fixed !important;
+			left: 0 !important;
+			width: 100% !important;
+			z-index: 9998 !important;
+			background: #fff !important;
+		}
+
+		/* Fix the mobile header section */
+		.mobileBannerSection {
+			position: fixed !important;
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			z-index: 9999 !important;
+			background: #000 !important;
 		}
 	</style>
 </body>
