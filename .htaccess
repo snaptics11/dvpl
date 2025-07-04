@@ -1,0 +1,14 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect root /index.html to /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Remove .html extension from URLs in root and subfolders
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9/_-]+)$ $1.html [L]
+
+# Ensure Apache uses index.html inside folders
+DirectoryIndex index.html
