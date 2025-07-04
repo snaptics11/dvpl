@@ -1,0 +1,19 @@
+# Allow Google Gemini (uses Googlebot)
+User-agent: Googlebot
+Allow: /
+
+# Allow ChatGPT (uses GPTBot)
+User-agent: GPTBot
+Allow: /
+
+# General rule for all other bots
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /search
+Disallow: /*?s=
+Disallow: /*?utm_*
+Disallow: /*.pdf$
+
+Allow: /
+
+Sitemap: https://dvpl.in/sitemap.xml
