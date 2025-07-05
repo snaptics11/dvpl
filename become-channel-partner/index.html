@@ -974,7 +974,7 @@
             </div>
         </section>
         <section
-            class="mt-5 elementor-section elementor-top-section elementor-element elementor-element-6a6a886b elementor-section-full_width elementor-hidden-tablet elementor-hidden-mobile elementor-section-height-default elementor-section-height-default"
+            class="mobileBannerSection elementor-section elementor-top-section elementor-element elementor-element-6a6a886b elementor-section-full_width elementor-hidden-tablet elementor-hidden-mobile elementor-section-height-default elementor-section-height-default"
             data-id="6a6a886b" data-element_type="section">
             <div class="elementor-container elementor-column-gap-default">
                 <div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-2cd428b3"
@@ -1178,8 +1178,45 @@
                 </div>
             </div>
         </section>
+        <style>
+            /* Fix the first top section */
+.elementor-section.elementor-top-section.elementor-element-ae3abd2 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Fix the second top section */
+.mt-5.fixed-mobile-header.elementor-section.elementor-top-section.elementor-element-79856bb3 {
+    position: fixed;
+    top: 50px; /* Adjust based on the height of the first fixed section */
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Adjust the body or a container to account for fixed sections */
+body {
+    margin-top: 60px; /* Adjust based on the combined height of the fixed sections */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Ensure the remaining sections are positioned correctly */
+.elementor-section.elementor-top-section.elementor-element-6a6a886b {
+    /* No need for position fixed here */
+    width: 100%;
+    /* Additional styling as needed */
+}
+
+/* Ensure content sections below are scrollable */
+.elementor-section.mobileBannerSection {
+    width: 100%;
+    /* Additional styling as needed */
+}
+
+        </style>
         <section
-            class="mobileBannerSection elementor-section elementor-top-section elementor-element elementor-element-763780f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+            class=" elementor-section elementor-top-section elementor-element elementor-element-763780f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
             data-id="763780f" data-element_type="section"
             data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
             <div class="elementor-background-overlay"></div>
