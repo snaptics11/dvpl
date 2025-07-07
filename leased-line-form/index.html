@@ -1215,61 +1215,46 @@
 												<p role="status" aria-live="polite" aria-atomic="true"></p>
 												<ul></ul>
 											</div>
-											<form
-												action="/leased-line-form/?simply_static_page=1175#wpcf7-f3886-p3887-o1"
-												method="post" class="wpcf7-form init" aria-label="Contact form"
-												novalidate="novalidate" data-status="init">
-												<div style="display: none;">
-													<input type="hidden" name="_wpcf7" value="3886">
-													<input type="hidden" name="_wpcf7_version" value="6.0.6">
-													<input type="hidden" name="_wpcf7_locale" value="en_US">
-													<input type="hidden" name="_wpcf7_unit_tag"
-														value="wpcf7-f3886-p3887-o1">
-													<input type="hidden" name="_wpcf7_container_post" value="3887">
-													<input type="hidden" name="_wpcf7_posted_data_hash" value="">
-													<input type="hidden" name="_wpcf7_recaptcha_response" value="">
-												</div>
-												<label> Your name
-													<span class="wpcf7-form-control-wrap" data-name="your-name"><input
-															size="40" maxlength="400"
+											<form id="contactForm" action="leased-line-form.php" method="post"
+												class="wpcf7-form init" novalidate>
+
+												<label>Your name
+													<span class="wpcf7-form-control-wrap" data-name="your-name">
+														<input size="40" maxlength="80"
 															class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-															autocomplete="name" aria-required="true"
-															aria-invalid="false" value="" type="text"
-															name="your-name"></span> </label>
+															id="your-name" name="your-name" type="text"
+															autocomplete="name" required aria-required="true"
+															placeholder="e.g. Koushik Sai Prakash">
+													</span>
+												</label>
 
-
-												<label> Your email
-													<span class="wpcf7-form-control-wrap" data-name="your-email"><input
-															size="40" maxlength="400"
+												<label>Your email
+													<span class="wpcf7-form-control-wrap" data-name="your-email">
+														<input size="40" maxlength="120"
 															class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
-															autocomplete="email" aria-required="true"
-															aria-invalid="false" value="" type="email"
-															name="your-email"></span> </label>
-
-
-												<label> Phone Number
-													<span class="wpcf7-form-control-wrap" data-name="tel-496"><input
-															size="40" maxlength="400"
-															class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel"
-															autocomplete="tel" aria-required="true" aria-invalid="false"
-															value="" type="tel" name="tel-496"></span>
+															id="your-email" name="your-email" type="email"
+															autocomplete="email" required aria-required="true"
+															placeholder="you@example.com">
+													</span>
 												</label>
 
-												<label> Company Name
-													<span class="wpcf7-form-control-wrap" data-name="tel-496"><input
-															size="40" maxlength="400"
+												<label>Phone Number
+													<span class="wpcf7-form-control-wrap" data-name="tel-496">
+														<input size="40" maxlength="15"
 															class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel"
-															autocomplete="tel" aria-required="true" aria-invalid="false"
-															value="" type="tel" name="tel-496"></span>
+															id="tel-496" name="tel-496" type="tel" autocomplete="tel"
+															pattern="[0-9]{10,15}" required aria-required="true"
+															placeholder="10 digit mobile">
+													</span>
 												</label>
 
-
-												<!-- <label for="message" style="text-align:left;">Location*</label>
-												<span class="wpcf7-form-control-wrap w-75" data-name="menu-278"><select
+												<label for="menu-278">Location</label>
+												<span class="wpcf7-form-control-wrap w-75" data-name="menu-278">
+													<select id="menu-278"
 														class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required"
-														aria-required="true" aria-invalid="false" name="menu-278">
-														<option value="Choose Your Location">Choose Your Location
-														</option>
+														name="menu-278" required aria-required="true">
+														<option value="" disabled selected>Choose Your Location</option>
+														<!-- options unchanged -->
 														<option value="Chilakaluripeta">Chilakaluripeta</option>
 														<option value="Chennai">Chennai</option>
 														<option value="Dhaksharamam">Dhaksharamam</option>
@@ -1288,19 +1273,51 @@
 														<option value="Vijayawada">Vijayawada</option>
 														<option value="Vizag">Vizag</option>
 														<option value="Warangal">Warangal</option>
-													</select></span>  -->
-
-												<label for="message"> Enter Location </label>
-												<span class="wpcf7-form-control-wrap" data-name="location">
-													<textarea name="location" cols="40" style="height: 90px;"
-														class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required"
-														aria-required="true" aria-invalid="false"></textarea>
+													</select>
 												</span>
+												<br>
+
+												<label for="your-address">Enter your Full Address</label>
+												<span class="wpcf7-form-control-wrap" data-name="your-address">
+													<textarea name="your-address" id="your-address" cols="40" rows="3"
+														maxlength="500"
+														class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required"
+														required aria-required="true"
+														placeholder="Flat / Street / City / Pincode"></textarea>
+												</span>
+												<br>
+
+												<input type="text" name="hp_email" style="display:none"
+													autocomplete="off">
 
 												<input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit"
 													value="Submit">
 												<div class="wpcf7-response-output" aria-hidden="true"></div>
+												<div id="popup" class="popup" role="alert" aria-live="polite"></div>
 											</form>
+
+											<style>
+												.popup {
+													display: none;
+													background: #333;
+													color: #fff;
+													padding: 1rem 1.5rem;
+													border-radius: 6px;
+													position: fixed;
+													bottom: 20px;
+													left: 50%;
+													transform: translateX(-50%);
+													font-size: 0.95rem;
+													z-index: 9999;
+													opacity: 0;
+													transition: opacity 0.4s ease-in-out;
+												}
+
+												.popup.show {
+													display: block;
+													opacity: 1;
+												}
+											</style>
 										</div>
 									</div>
 								</div>
@@ -1883,91 +1900,44 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
-	<!-- <div class="floating_btn"> -->
-		<a target="_blank" href="https://wa.me/7036509509">
-			<div class="contact_icon">
-				<i class="fa fa-whatsapp my-float"></i>
-			</div>
-		</a>
-		<p class="text_icon">Get New Connection</p>
-	</div>
+<script>
+		(() => {
+			const form = document.getElementById('contactForm');
+			const popup = document.getElementById('popup');
+			const submit = form.querySelector('[type="submit"]');
 
-	<style>
-		.floating_btn p {
-			font-size: 12px !important;
-			color: #000 !important;
-		}
+			/** Show a message then auto‑hide */
+			const flash = (msg) => {
+				popup.textContent = msg;
+				popup.classList.add('show');
+				setTimeout(() => popup.classList.remove('show'), 3000);
+			};
 
-		.floating_btn a {
-			text-decoration: none;
-		}
+			form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				submit.disabled = true;
 
-		.floating_btn {
-			position: fixed;
-			bottom: 30px;
-			right: 30px;
-			width: 150px;
-			height: 100px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			z-index: 1000;
-		}
+				try {
+					const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+					const json = await res.json().catch(() => ({}));
 
-		@keyframes pulsing {
-			to {
-				box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
-			}
-		}
+					flash(json.message || (res.ok
+						? '✅ Thank you! We’ll contact you shortly.'
+						: '❌ Server error. Please try again.'));
 
-		.contact_icon {
-			background-color: #42db87;
-			color: #fff;
-			width: 60px;
-			height: 60px;
-			font-size: 30px;
-			border-radius: 50px;
-			text-align: center;
-			box-shadow: 2px 2px 3px #999;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			transform: translatey(0px);
-			animation: pulse 1.5s infinite;
-			box-shadow: 0 0 0 0 #42db87;
-			-webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-			-moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-			-ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-			animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-			font-weight: normal;
-			font-family: sans-serif;
-			text-decoration: none !important;
-			transition: all 300ms ease-in-out;
-		}
-
-
-		.text_icon {
-			margin-top: 8px;
-			color: #707070;
-			font-size: 13px;
-		}
-
-		@media screen and (max-width:992px) {
-			.floating_btn {
-				width: 130px;
-			}
-
-			.floating_btn p {
-				font-size: 10px !important;
-				color: #000 !important;
-			}
-
-			.floating_btn {
-				right: 20px;
-			}
-		}
-	</style>
+					if (res.ok) {
+						form.reset();
+						form.querySelector('select[name="menu-278"]').selectedIndex = 0;
+					}
+				} catch (err) {
+					console.error(err);
+					flash('❌ Network error. Please try again.');
+				} finally {
+					submit.disabled = false;
+				}
+			});
+		})();
+	</script>
 </body>
 
 </html>
