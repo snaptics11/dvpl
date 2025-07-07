@@ -726,6 +726,34 @@
 			display: none;
 		}
 	</style>
+	<style>
+		.popup {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #f8f9fa;
+			padding: 20px;
+			border: 1px solid #ddd;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			z-index: 1000;
+
+		}
+
+		@media screen and (max-width:574px) {
+			.popup {
+				min-width: 85%;
+				max-width: 95%;
+			}
+		}
+
+		@media screen and (min-width:575px) {
+			.popup {
+				max-width: 450px;
+			}
+		}
+	</style>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 </head>
 
@@ -1246,7 +1274,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b4db9b8 px-md-5"
+				<div class="mt-5 elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b4db9b8 px-md-5"
 					data-id="b4db9b8" data-element_type="column">
 					<div class="elementor-widget-wrap elementor-element-populated">
 						<div class="elementor-element elementor-element-4f2f5be elementor-widget elementor-widget-elementskit-contact-form7"
@@ -1255,109 +1283,83 @@
 							<div class="elementor-widget-container">
 								<div class="ekit-wid-con">
 									<div class="ekit-form">
-										<div class="wpcf7 no-js" id="wpcf7-f2645-p2903-o1" lang="en-US" dir="ltr"
-											data-wpcf7-id="2645">
+										<div class="wpcf7 no-js">
 											<div class="screen-reader-response">
 												<p role="status" aria-live="polite" aria-atomic="true"></p>
 												<ul></ul>
 											</div>
-											<form action="/getstarted/?simply_static_page=1057#wpcf7-f2645-p2903-o1"
-												method="post" class="wpcf7-form init" aria-label="Contact form"
-												novalidate="novalidate" data-status="init">
-												<div style="display: none;">
-													<input type="hidden" name="_wpcf7" value="2645">
-													<input type="hidden" name="_wpcf7_version" value="6.0.6">
-													<input type="hidden" name="_wpcf7_locale" value="en_US">
-													<input type="hidden" name="_wpcf7_unit_tag"
-														value="wpcf7-f2645-p2903-o1">
-													<input type="hidden" name="_wpcf7_container_post" value="2903">
-													<input type="hidden" name="_wpcf7_posted_data_hash" value="">
-													<input type="hidden" name="_wpcf7_recaptcha_response" value="">
-												</div>
-												<label> Your name *
-													<span class="wpcf7-form-control-wrap" data-name="your-name"><input
-															size="40" maxlength="400"
+											<form id="contactForm" action="contact.php" method="post"
+												class="wpcf7-form init">
+												<label>Your name
+													<span class="wpcf7-form-control-wrap" data-name="your-name">
+														<input size="40" maxlength="400"
 															class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
 															autocomplete="name" aria-required="true"
-															aria-invalid="false" value="" type="text"
-															name="your-name"></span> </label>
-
-
-												<label> Your email *
-													<span class="wpcf7-form-control-wrap" data-name="your-email"><input
-															size="40" maxlength="400"
+															aria-invalid="false" type="text" name="your-name" required>
+													</span>
+												</label>
+												<label>Your email
+													<span class="wpcf7-form-control-wrap" data-name="your-email">
+														<input size="40" maxlength="400"
 															class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
 															autocomplete="email" aria-required="true"
-															aria-invalid="false" value="" type="email"
-															name="your-email"></span> </label>
-
-
-												<label> Phone Number *
-													<span class="wpcf7-form-control-wrap" data-name="tel-496"><input
-															size="40" maxlength="400"
+															aria-invalid="false" type="email" name="your-email"
+															required>
+													</span>
+												</label>
+												<label>Phone Number
+													<span class="wpcf7-form-control-wrap" data-name="tel-496">
+														<input size="40" maxlength="400"
 															class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel"
 															autocomplete="tel" aria-required="true" aria-invalid="false"
-															value="" type="tel" name="tel-496"></span>
+															type="tel" name="tel-496" required>
+													</span>
 												</label>
-
-
-												<!-- <label for="message">Location*</label>
-                                                <span class="wpcf7-form-control-wrap w-75" data-name="menu-278"><select
-                                                        class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required"
-                                                        aria-required="true" aria-invalid="false" name="menu-278">
-                                                        <option value="Choose Your Location">Choose Your Location
-                                                        </option>
-                                                        <option value="Chilakaluripeta">Chilakaluripeta</option>
-                                                        <option value="Chennai">Chennai</option>
-                                                        <option value="Dhaksharamam">Dhaksharamam</option>
-                                                        <option value="Guntur">Guntur</option>
-                                                        <option value="Hyderabad">Hyderabad</option>
-                                                        <option value="Mahabubnagar">Mahabubnagar</option>
-                                                        <option value="Ponnur">Ponnur</option>
-                                                        <option value="Rajahmundry">Rajahmundry</option>
-                                                        <option value="Satenapalli">Satenapalli</option>
-                                                        <option value="Shillong">Shillong</option>
-                                                        <option value="Siddipet">Siddipet</option>
-                                                        <option value="Srikakulam">Srikakulam</option>
-                                                        <option value="Sullurpeta">Sullurpeta</option>
-                                                        <option value="Tapeswaram">Tapeswaram</option>
-                                                        <option value="Tenali">Tenali</option>
-                                                        <option value="Vijayawada">Vijayawada</option>
-                                                        <option value="Vizag">Vizag</option>
-                                                        <option value="Warangal">Warangal</option>
-                                                    </select></span> -->
-
-												<br>
-												<label for="message">Enquiry Type *</label>
-												<span class="wpcf7-form-control-wrap w-75" data-name="menu-278"><select
+												<label for="message">Location</label>
+												<span class="wpcf7-form-control-wrap w-75" data-name="menu-278">
+													<select
 														class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required"
-														aria-required="true" aria-invalid="false" name="menu-278">
-														<option value="Choose Your Location">Choose Enquiry Type
-														</option>
-														<option value="New Connection">New Connection</option>
-														<option value="Upgrade">Upgrade</option>
-														<option value="Support">Support</option>
-														<option value="Others">Others</option>
-
-													</select></span>
-												<br>
-												<label for="message"> Message *</label>
-												<span class="wpcf7-form-control-wrap" data-name="your-message">
-													<textarea name="your-message" cols="40" style="height: 90px;"
-														class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required"
-														aria-required="true" aria-invalid="false"></textarea>
+														aria-required="true" aria-invalid="false" name="menu-278"
+														required>
+														<option value="">Choose Your Location</option>
+														<option value="Chilakaluripeta">Chilakaluripeta</option>
+														<option value="Chennai">Chennai</option>
+														<option value="Dhaksharamam">Dhaksharamam</option>
+														<option value="Guntur">Guntur</option>
+														<option value="Hyderabad">Hyderabad</option>
+														<option value="Mahabubnagar">Mahabubnagar</option>
+														<option value="Ponnur">Ponnur</option>
+														<option value="Rajahmundry">Rajahmundry</option>
+														<option value="Satenapalli">Satenapalli</option>
+														<option value="Shillong">Shillong</option>
+														<option value="Siddipet">Siddipet</option>
+														<option value="Srikakulam">Srikakulam</option>
+														<option value="Sullurpeta">Sullurpeta</option>
+														<option value="Tapeswaram">Tapeswaram</option>
+														<option value="Tenali">Tenali</option>
+														<option value="Vijayawada">Vijayawada</option>
+														<option value="Vizag">Vizag</option>
+														<option value="Warangal">Warangal</option>
+													</select>
 												</span>
-
-
-												<!-- <label> Recaptcha
-
-                                                </label> -->
-
+												<br>
+												<label for="address">Enter your Full Address</label>
+												<span class="wpcf7-form-control-wrap" data-name="your-address">
+													<textarea name="your-address" cols="40" style="height: 90px;"
+														class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required"
+														aria-required="true" aria-invalid="false" required></textarea>
+												</span>
 												<br>
 												<input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit"
-													value="Send Message">
+													value="Submit">
 												<div class="wpcf7-response-output" aria-hidden="true"></div>
 											</form>
+
+
+											<div id="popup" class="popup"></div>
+
+
+
 										</div>
 									</div>
 								</div>
@@ -1940,91 +1942,47 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
-	<!-- <div class="floating_btn"> -->
-		<a target="_blank" href="https://wa.me/7036509509">
-			<div class="contact_icon">
-				<i class="fa fa-whatsapp my-float"></i>
-			</div>
-		</a>
-		<p class="text_icon">Get New Connection</p>
-	</div>
+<script>
+		document.getElementById('contactForm').addEventListener('submit', function (event) {
+			event.preventDefault(); // Prevent the default form submission
+			var form = event.target;
+			var formData = new FormData(form);
 
-	<style>
-		.floating_btn p {
-			font-size: 12px !important;
-			color: #000 !important;
-		}
+			fetch(form.action, {
+				method: 'POST',
+				body: formData
+			})
+				.then(response => response.json())
+				.then(data => {
+					var popup = document.getElementById('popup');
+					popup.textContent = data.message;
+					popup.style.display = 'block';
 
-		.floating_btn a {
-			text-decoration: none;
-		}
+					// Reset the form fields
+					form.reset();
 
-		.floating_btn {
-			position: fixed;
-			bottom: 30px;
-			right: 30px;
-			width: 150px;
-			height: 100px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			z-index: 1000;
-		}
+					// Explicitly reset the select element to its default value
+					var selectElement = form.querySelector('select[name="menu-278"]');
+					selectElement.value = "Choose Your Location";
 
-		@keyframes pulsing {
-			to {
-				box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
-			}
-		}
+					// Hide the popup after 3 seconds
+					setTimeout(function () {
+						popup.style.display = 'none';
+					}, 3000);
+				})
+				.catch(error => {
+					console.error('Error:', error);
+					var popup = document.getElementById('popup');
+					popup.textContent = 'An error occurred. Please try again.';
+					popup.style.display = 'block';
 
-		.contact_icon {
-			background-color: #42db87;
-			color: #fff;
-			width: 60px;
-			height: 60px;
-			font-size: 30px;
-			border-radius: 50px;
-			text-align: center;
-			box-shadow: 2px 2px 3px #999;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			transform: translatey(0px);
-			animation: pulse 1.5s infinite;
-			box-shadow: 0 0 0 0 #42db87;
-			-webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-			-moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-			-ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-			animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
-			font-weight: normal;
-			font-family: sans-serif;
-			text-decoration: none !important;
-			transition: all 300ms ease-in-out;
-		}
-
-
-		.text_icon {
-			margin-top: 8px;
-			color: #707070;
-			font-size: 13px;
-		}
-
-		@media screen and (max-width:992px) {
-			.floating_btn {
-				width: 130px;
-			}
-
-			.floating_btn p {
-				font-size: 10px !important;
-				color: #000 !important;
-			}
-
-			.floating_btn {
-				right: 20px;
-			}
-		}
-	</style>
+					// Hide the popup after 3 seconds
+					setTimeout(function () {
+						popup.style.display = 'none';
+					}, 3000);
+				});
+		});
+	</script>
 </body>
 
 </html>

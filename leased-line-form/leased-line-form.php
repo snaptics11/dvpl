@@ -6,68 +6,42 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-header('Content-Type: application/json');
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Sanitize and validate input
-    $name     = htmlspecialchars(trim($_POST["your-name"] ?? ''));
-    $email    = filter_var(trim($_POST["your-email"] ?? ''), FILTER_SANITIZE_EMAIL);
-    $phone    = htmlspecialchars(trim($_POST["tel-496"] ?? ''));
-    $location = htmlspecialchars(trim($_POST["menu-278"] ?? ''));
-    $address  = htmlspecialchars(trim($_POST["your-address"] ?? ''));
-
-    if (!$name || !filter_var($email, FILTER_VALIDATE_EMAIL) || !$phone || !$location || !$address) {
-        echo json_encode(["success" => false, "message" => "Invalid input. Please fill all fields correctly."]);
-        exit;
-    }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = strip_tags(trim($_POST["your-name"]));
+    $email = filter_var(trim($_POST["your-email"]), FILTER_SANITIZE_EMAIL);
+    $phone = strip_tags(trim($_POST["tel-496"]));
+    $location = strip_tags(trim($_POST["menu-278"]));
+    $address = strip_tags(trim($_POST["your-address"]));
 
     $mail = new PHPMailer(true);
 
     try {
-        // SMTP settings
+        // Server settings
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'saikoushik166@gmail.com';
-        $mail->Password   = 'nanr hrbh cutz ckdf';  
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'dvpldigitalmarketing@gmail.com';
+        $mail->Password = 'wlon yvqb tome rrvh';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
-
-        // Email setup
-        $mail->setFrom('saikoushik166@gmail.com', 'Website Contact Form');
-        $mail->addReplyTo($email, $name);
+        $mail->Port = 587;
 
         // Recipients
-        $recipients = [
-            'laxmareddy.j@dvpl.org',
-            'ramesh@dvpl.in',
-            'rpreethikareddy@dvpl.org',
-            'maddurinaresh3@gmail.com'
-        ];
-        foreach ($recipients as $to) {
-            $mail->addAddress($to);
-        }
+        $mail->setFrom($email, $name);
+        $mail->addAddress('laxmareddy.j@dvpl.org');
+        $mail->addAddress('ramesh@dvpl.in');
+        $mail->addAddress('rpreethikareddy@dvpl.org');
 
-        // Message content
+        // Content
         $mail->isHTML(false);
-        $mail->Subject = "New Leased Line Form Submission - $name";
-        $mail->Body = <<<EOD
-New Leased Line Form Submission:
-
-Name:     $name
-Email:    $email
-Phone:    $phone
-Location: $location
-Address:  $address
-EOD;
+        $mail->Subject = "New Leased Line Submission from $name";
+        $mail->Body = "Name: $name\nEmail: $email\nPhone: $phone\nLocation: $location\nAddress: $address\n";
 
         $mail->send();
-        echo json_encode(["success" => true, "message" => "✅ Thank you, $name. We’ll contact you soon!"]);
+        echo json_encode(["success" => true, "message" => "Thank you for contacting us, $name. We will get back to you soon!"]);
     } catch (Exception $e) {
-        error_log("Mailer Error: " . $mail->ErrorInfo);
-        echo json_encode(["success" => false, "message" => "❌ Mail send failed. Please try again later."]);
+        echo json_encode(["success" => false, "message" => "Oops! Something went wrong. Please try again later. Mailer Error: {$mail->ErrorInfo}"]);
     }
 } else {
-    echo json_encode(["success" => false, "message" => "Invalid request method."]);
+    echo json_encode(["success" => false, "message" => "There was a problem with your submission. Please try again."]);
 }
 ?>
