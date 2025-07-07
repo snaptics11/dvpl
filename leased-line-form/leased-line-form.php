@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = strip_tags(trim($_POST["your-name"]));
     $email = filter_var(trim($_POST["your-email"]), FILTER_SANITIZE_EMAIL);
     $phone = strip_tags(trim($_POST["tel-496"]));
+    $company = strip_tags(trim($_POST["your-company"]));
     $location = strip_tags(trim($_POST["menu-278"]));
     $address = strip_tags(trim($_POST["your-address"]));
 
@@ -34,7 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Content
         $mail->isHTML(false);
         $mail->Subject = "New Leased Line Submission from $name";
-        $mail->Body = "Name: $name\nEmail: $email\nPhone: $phone\nLocation: $location\nAddress: $address\n";
+        $mail->Body = "Name: $name\n
+                       Email: $email\n
+                       Phone: $phone\n
+                       Company Name: $company\n  
+                       Location:$location\n
+                       Address: $address\n";
 
         $mail->send();
         echo json_encode(["success" => true, "message" => "Thank you for contacting us, $name. We will get back to you soon!"]);
