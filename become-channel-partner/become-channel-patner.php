@@ -26,8 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Recipients
         $mail->setFrom($email, $name);
-        $mail->addAddress('laxmareddy.j@dvpl.org');
-        $mail->addAddress('ramesh@dvpl.in');
+        $mail->addAddress('laxmareddy.j@dvpl.org');  
         $mail->addAddress('rpreethikareddy@dvpl.org');
 
         // Content
