@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->addAddress('rpreethikareddy@dvpl.org');
 
         $mail->isHTML(false);
-        $mail->Subject = "New 'Become Channel Partner' Submission from $name";
+        $mail->Subject = "New Contact us Submission from $name";
         $mail->Body = <<<EOT
 You have received a new submission:
 
