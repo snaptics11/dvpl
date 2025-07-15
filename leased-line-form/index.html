@@ -1214,7 +1214,8 @@
 							data-widget_type="section_heading.default">
 							<div class="elementor-widget-container ">
 								<div class="tx-sectionHeading text-">
-									<h2 class="tx-sectionHeading__title tx-split-text split-in-right">New Leased Line Form</h2> 
+									<h2 class="tx-sectionHeading__title tx-split-text split-in-right">New Leased Line
+										Form</h2>
 								</div>
 							</div>
 						</div>
@@ -1316,8 +1317,9 @@
 													<span class="wpcf7-form-control-wrap" data-name="company-name">
 														<input size="40" maxlength="400"
 															class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel"
-															autocomplete="name" aria-required="true" aria-invalid="false"
-															type="text" name="company-name" required>
+															autocomplete="name" aria-required="true"
+															aria-invalid="false" type="text" name="company-name"
+															required>
 													</span>
 												</label>
 												<label for="message">Location</label>
@@ -1947,11 +1949,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
-<script>
+	<script>
 		document.getElementById('contactForm').addEventListener('submit', function (event) {
-			event.preventDefault(); // Prevent the default form submission
+			event.preventDefault();
 			var form = event.target;
 			var formData = new FormData(form);
+			var popup = document.getElementById('popup');
 
 			fetch(form.action, {
 				method: 'POST',
@@ -1959,35 +1962,37 @@
 			})
 				.then(response => response.json())
 				.then(data => {
-					var popup = document.getElementById('popup');
 					popup.textContent = data.message;
+					popup.style.color = data.success ? 'green' : 'red';
 					popup.style.display = 'block';
 
-					// Reset the form fields
-					form.reset();
+					if (data.success) {
+						form.reset();
 
-					// Explicitly reset the select element to its default value
-					var selectElement = form.querySelector('select[name="menu-278"]');
-					selectElement.value = "Choose Your Location";
+						// Reset select dropdown to default
+						const selectElement = form.querySelector('select[name="menu-278"]');
+						if (selectElement) {
+							selectElement.value = ""; // Matches the value of the default option
+						}
+					}
 
-					// Hide the popup after 3 seconds
-					setTimeout(function () {
+					setTimeout(() => {
 						popup.style.display = 'none';
 					}, 3000);
 				})
 				.catch(error => {
 					console.error('Error:', error);
-					var popup = document.getElementById('popup');
 					popup.textContent = 'An error occurred. Please try again.';
+					popup.style.color = 'red';
 					popup.style.display = 'block';
 
-					// Hide the popup after 3 seconds
-					setTimeout(function () {
+					setTimeout(() => {
 						popup.style.display = 'none';
 					}, 3000);
 				});
 		});
 	</script>
+
 </body>
 
 </html>

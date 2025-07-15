@@ -9,14 +9,14 @@ require 'PHPMailer/src/SMTP.php';
 header('Content-Type: application/json');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name     = strip_tags(trim($_POST["your-name"] ?? ''));
-    $email    = filter_var(trim($_POST["your-email"] ?? ''), FILTER_SANITIZE_EMAIL);
-    $phone    = strip_tags(trim($_POST["tel-496"] ?? ''));
-    $location = strip_tags(trim($_POST["menu-278"] ?? ''));
-    $address  = strip_tags(trim($_POST["your-address"] ?? ''));
+    // Sanitize inputs
+    $name = strip_tags(trim($_POST["your-name"] ?? ''));
+    $email = filter_var(trim($_POST["your-email"] ?? ''), FILTER_SANITIZE_EMAIL);
+    $phone = strip_tags(trim($_POST["tel-496"] ?? ''));
+    $message = strip_tags(trim($_POST["your-Message"] ?? '')); // 👈 fixed casing
 
-    // Validate required fields
-    if (!$name || !$email || !$phone || !$location || !$address) {
+    // Validate inputs
+    if (empty($name) || empty($email) || empty($phone) || empty($message)) {
         echo json_encode(["success" => false, "message" => "Please fill in all required fields."]);
         exit;
     }
@@ -29,29 +29,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $mail = new PHPMailer(true);
 
     try {
-        // SMTP settings
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'dvpldigitalmarketing@gmail.com';
-        $mail->Password   = 'wlon yvqb tome rrvh'; // Gmail app password
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'dvpldigitalmarketing@gmail.com';
+        $mail->Password = 'wlon yvqb tome rrvh';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
+        $mail->Port = 587;
 
-        // Mail settings
-        $mail->setFrom('dvpldigitalmarketing@gmail.com', 'DVPL Franchise Inquiry');
+        $mail->setFrom('dvpldigitalmarketing@gmail.com', 'DVPL Website');
         $mail->addReplyTo($email, $name);
         $mail->addAddress('laxmareddy.j@dvpl.org');
         $mail->addAddress('rpreethikareddy@dvpl.org');
 
         $mail->isHTML(false);
-        $mail->Subject = "New Franchise Submission from $name";
-        $mail->Body    = <<<EOT
+        $mail->Subject = "New 'Become Channel Partner' Submission from $name";
+        $mail->Body = <<<EOT
+You have received a new submission:
+
 Name: $name
 Email: $email
 Phone: $phone
-Location: $location
-Address: $address
+Message:
+$message
 EOT;
 
         $mail->send();
