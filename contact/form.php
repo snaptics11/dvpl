@@ -8,15 +8,17 @@ require 'PHPMailer/src/SMTP.php';
 
 header('Content-Type: application/json');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Sanitize inputs
     $name = strip_tags(trim($_POST["your-name"] ?? ''));
     $email = filter_var(trim($_POST["your-email"] ?? ''), FILTER_SANITIZE_EMAIL);
     $phone = strip_tags(trim($_POST["tel-496"] ?? ''));
     $location = strip_tags(trim($_POST["menu-278"] ?? ''));
-    $address = strip_tags(trim($_POST["your-address"] ?? ''));
+    $message = strip_tags(trim($_POST["your-Message"] ?? ''));
 
-    if (empty($name) || empty($email) || empty($phone) || empty($location) || empty($address)) {
-        echo json_encode(["success" => false, "message" => "Please fill all the fields."]);
+    // Validate
+    if (empty($name) || empty($email) || empty($phone) || empty($location) || empty($message)) {
+        echo json_encode(["success" => false, "message" => "Please fill in all required fields."]);
         exit;
     }
 
@@ -28,25 +30,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = new PHPMailer(true);
 
     try {
-        // Server settings
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'dvpldigitalmarketing@gmail.com'; 
+        $mail->Username = 'dvpldigitalmarketing@gmail.com';
         $mail->Password = 'wlon yvqb tome rrvh';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        // Recipients
-        $mail->setFrom('dvpldigitalmarketing@gmail.com', 'Website Form'); 
+        $mail->setFrom('dvpldigitalmarketing@gmail.com', 'DVPL Website');
         $mail->addReplyTo($email, $name);
         $mail->addAddress('laxmareddy.j@dvpl.org');
         $mail->addAddress('rpreethikareddy@dvpl.org');
 
-        // Email content
         $mail->isHTML(false);
-        $mail->Subject = "New Form Submission from $name";
-        $mail->Body = "Name: $name\nEmail: $email\nPhone: $phone\nLocation: $location\nAddress: $address";
+        $mail->Subject = "New 'Become Channel Partner' Submission from $name";
+        $mail->Body = <<<EOT
+You have received a new submission:
+
+Name: $name
+Email: $email
+Phone: $phone
+Location: $location
+Message: $message
+EOT;
 
         $mail->send();
         echo json_encode(["success" => true, "message" => "Thank you for contacting us, $name. We will get back to you soon!"]);
@@ -54,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo json_encode(["success" => false, "message" => "Mailer Error: {$mail->ErrorInfo}"]);
     }
 } else {
-    echo json_encode(["success" => false, "message" => "Invalid request."]);
+    echo json_encode(["success" => false, "message" => "Invalid request method."]);
 }
 ?>
+    
